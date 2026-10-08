@@ -140,11 +140,12 @@ site-navbar, site-footer, whatsapp-float, product-catalog, contact-form { displa
 .cta-panel h2 { max-width: 760px; margin: 0; font-size: clamp(1.9rem, 3.5vw, 3.2rem); }
 .cta-panel.compact { padding-block: 45px; }
 
-.page-hero { min-height: 530px; padding-block: clamp(78px, 10vw, 130px); display: grid; grid-template-columns: 1fr auto; gap: 50px; align-items: center; border-bottom: 1px solid var(--line); }
+.page-hero { min-height: 530px; padding-block: clamp(78px, 10vw, 130px); display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 50px; align-items: center; border-bottom: 1px solid var(--line); }
 .page-hero > div:first-child { max-width: 880px; }
 .page-hero h1 { margin-bottom: 22px; }
 .page-hero p:last-child { max-width: 710px; font-size: 1.12rem; }
-.page-index { width: 136px; height: 136px; border-radius: 50%; display: grid; place-items: center; box-shadow: var(--pressed); color: rgba(38,61,36,.18); font-family: var(--display); font-size: 3.5rem; font-weight: 700; }
+.page-hero-visual { width: 100%; max-width: 480px; padding: 12px; justify-self: end; }
+.page-hero-visual img { width: 100%; height: auto; aspect-ratio: 4 / 3; border-radius: 22px; }
 .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(50px, 8vw, 105px); }
 .story-visual { min-height: 530px; position: relative; display: grid; place-items: center; overflow: hidden; }
 .story-visual img { width: 95%; }
@@ -302,7 +303,7 @@ blockquote { margin: 31px 0 0; padding: 24px 0 24px 28px; border-left: 3px solid
   .category-grid .category-card:last-child { grid-column: 1 / -1; }
   .feature-steps { margin-top: 5px; }
   .page-hero { min-height: 430px; }
-  .page-index { width: 100px; height: 100px; font-size: 2.8rem; }
+  .page-hero { gap: 30px; }
   .story-visual { order: 2; min-height: 470px; }
   .coverage-map { max-width: 440px; width: 100%; margin-inline: auto; }
   .identity-duo { grid-template-columns: 1fr; }
@@ -339,7 +340,7 @@ blockquote { margin: 31px 0 0; padding: 24px 0 24px 28px; border-left: 3px solid
   .cta-panel, .manifesto-panel { align-items: stretch; flex-direction: column; }
   .cta-panel .button, .manifesto-panel .button { width: 100%; }
   .page-hero { min-height: 440px; grid-template-columns: 1fr; gap: 15px; padding-block: 67px; }
-  .page-index { width: 70px; height: 70px; font-size: 1.8rem; }
+  .page-hero-visual { max-width: 400px; margin-top: 24px; justify-self: center; transform: none; }
   .story-visual { min-height: 360px; }
   .process-card { min-height: 230px; }
   .logo-grid { grid-template-columns: 1fr 1fr; }
