@@ -16,8 +16,8 @@
         <a class="skip-link" href="#contenido">Saltar al contenido</a>
         <header class="site-header">
           <div class="nav-shell">
-            <a class="brand" href="index.html" aria-label="Tulah — Inicio">
-              <img src="assets/logo-tulah.svg" alt="Tulah" width="148" height="48">
+            <a class="brand" href="index.html" aria-label="TULAH — Inicio">
+              <img src="assets/logo-tulah.svg" alt="TULAH" width="148" height="48">
             </a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
               <span class="sr-only">Abrir menú</span><i class="bi bi-list" aria-hidden="true"></i>
@@ -51,7 +51,7 @@
         <footer class="site-footer">
           <div class="footer-grid">
             <div class="footer-brand">
-              <img src="assets/logo-tulah.svg" alt="Tulah" width="148" height="48">
+              <img src="assets/logo-tulah.svg" alt="TULAH" width="148" height="48">
               <p>Equipo de seguridad y automatización industrial, regalos, globos y más.</p>
               <a class="footer-phone" href="tel:+528114744867">${data.displayPhone}</a>
             </div>
@@ -59,7 +59,7 @@
             <div><h2>Soluciones</h2><ul><li><a href="productos.html?q=proteccion">Protección personal</a></li><li><a href="productos.html?q=seguridad">Seguridad industrial</a></li><li><a href="productos.html?q=automatizacion">Automatización</a></li><li><a href="productos.html?q=promocionales">Regalos y promocionales</a></li><li><a href="productos.html?q=eventos">Eventos corporativos</a></li></ul></div>
             <div><h2>Hablemos</h2><p>${data.location}<br>Atención a la región Noreste</p><p><a href="mailto:juan.salinas@tulah.mx">juan.salinas@tulah.mx</a><br><a href="mailto:viridiana@tulah.mx">viridiana@tulah.mx</a></p><a class="text-link" href="contacto.html">Solicitar asesoría <span aria-hidden="true"><i class="bi bi-arrow-right" aria-hidden="true"></i></span></a></div>
           </div>
-          <div class="footer-bottom"><p>© ${new Date().getFullYear()} Tulah. Todos los derechos reservados.</p><p>Seguridad que acompaña.</p></div>
+          <div class="footer-bottom"><p>© ${new Date().getFullYear()} TULAH. Todos los derechos reservados.</p><p>Seguridad que acompaña.</p></div>
         </footer>`;
     }
   }
@@ -67,8 +67,8 @@
   class WhatsAppFloat extends HTMLElement {
     connectedCallback() {
       const page = currentFile().replace('.html', '').replace('index', 'inicio');
-      const message = `Hola Tulah, visité la página de ${page} y quisiera recibir asesoría.`;
-      this.innerHTML = `<a class="whatsapp-float" href="${utils.buildWhatsAppUrl(message)}" target="_blank" rel="noopener" aria-label="Contactar a Tulah por WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a>`;
+      const message = `Hola TULAH, visité la página de ${page} y quisiera recibir asesoría.`;
+      this.innerHTML = `<a class="whatsapp-float" href="${utils.buildWhatsAppUrl(message)}" target="_blank" rel="noopener" aria-label="Contactar a TULAH por WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a>`;
     }
   }
 
@@ -126,10 +126,10 @@
       this.querySelector('.catalog-summary').textContent = `${products.length} ${products.length === 1 ? 'solución encontrada' : 'soluciones encontradas'}`;
       this.querySelector('.catalog-grid').innerHTML = products.length ? products.map((product) => `
         <article class="product-card" id="${product.id}">
-          <div class="product-icon">${icon(product.icon)}</div><p class="card-kicker">${escapeHtml(product.group)}</p><h2>${escapeHtml(product.name)}</h2><p>${escapeHtml(product.description)}</p>
+          <div class="product-image"><img src="assets/productos/${escapeHtml(product.id)}.jpg" alt="${escapeHtml(product.name)}" width="256" height="256" loading="lazy" decoding="async"></div><p class="card-kicker">${escapeHtml(product.group)}</p><h2>${escapeHtml(product.name)}</h2><p>${escapeHtml(product.description)}</p>
           <ul>${product.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
           ${productBrands(product.id)}
-          <a class="card-action" target="_blank" rel="noopener" href="${utils.buildWhatsAppUrl(`Hola Tulah, deseo cotizar productos de ${product.name}.`)}">Solicitar cotización <span aria-hidden="true"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a>
+          <a class="card-action" target="_blank" rel="noopener" href="${utils.buildWhatsAppUrl(`Hola TULAH, deseo cotizar productos de ${product.name}.`)}">Solicitar cotización <span aria-hidden="true"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a>
         </article>`).join('') : `<div class="empty-state"><div class="product-icon">${icon('grid')}</div><h2>No encontramos coincidencias</h2><p>Prueba con otra palabra o consulta todo el catálogo.</p><button class="button button-secondary" type="button">Limpiar búsqueda</button></div>`;
       this.highlightVisibleCards();
       this.querySelector('.empty-state button')?.addEventListener('click', () => {
@@ -172,7 +172,7 @@
           return;
         }
         const company = values.company ? `\nEmpresa: ${values.company}` : '';
-        const message = `Hola Tulah, soy ${values.name}.${company}\nCorreo: ${values.email}\n\nSolicitud: ${values.message}`;
+        const message = `Hola TULAH, soy ${values.name}.${company}\nCorreo: ${values.email}\n\nSolicitud: ${values.message}`;
         window.open(utils.buildWhatsAppUrl(message), '_blank', 'noopener,noreferrer');
       });
     }

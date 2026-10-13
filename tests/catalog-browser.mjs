@@ -89,6 +89,7 @@ try {
     await navigate(base + proposalPath + '/productos.html', width, true);
     await evaluate("document.querySelectorAll('img').forEach(i=>i.loading='eager')");
     await until(() => evaluate("[...document.images].every(i=>i.complete&&i.naturalWidth>0)"), 'catalog images');
+    assert.ok(await evaluate("[...document.querySelectorAll('.product-card')].every(card => { const image = card.querySelector('.product-image img'); return image && image.naturalWidth > 0 && image.alt.trim() && !card.querySelector('.product-icon'); })"), 'Every product card has a loaded, accessible product image instead of an icon');
     const check = async () => {
       const r = await evaluate("(()=>{const c=[...document.querySelectorAll('.product-card')],h=c.map(e=>e.getBoundingClientRect().height);return {count:c.length,spread:Math.max(...h)-Math.min(...h),overflow:document.documentElement.scrollWidth>innerWidth+1,clipped:c.some(e=>e.scrollHeight>e.clientHeight+1)};})()");
       assert.ok(r.count>0);assert.ok(r.spread<1, JSON.stringify(r));assert.ok(!r.overflow);assert.ok(!r.clipped);

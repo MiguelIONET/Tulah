@@ -77,6 +77,52 @@ hero-video.is-playing video, hero-video.has-played video { opacity: 1; }
   .brand-line .brand-badge { width: 100%; }
   .brand-core > img { width: 78px; margin-bottom: 5px; }
 }
+/* Photographic heroes for interior pages. */
+.page-hero-photo.section-shell {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 560px;
+  padding: 90px max(20px, calc((100% - 1180px) / 2));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border: 0;
+  background: #172b19;
+  color: #fff;
+}
+.page-hero-photo > .page-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  pointer-events: none;
+}
+.page-hero-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(8,26,16,.90), rgba(8,26,16,.75) 45%, rgba(8,26,16,.28)), linear-gradient(0deg, rgba(8,26,16,.22), transparent);
+  pointer-events: none;
+}
+.page-hero-photo > div:first-child { width: 100%; max-width: 850px; }
+.page-hero-photo h1 { font-size: clamp(2.6rem, 5.5vw, 5rem); }
+.page-hero-photo h1 em { color: var(--brand-lime); text-decoration: none; }
+.page-hero-photo p { max-width: 650px; color: #f0f5ed; font-size: 1.08rem; }
+.page-hero-photo .eyebrow { color: var(--brand-lime); font-size: .72rem; }
+.page-hero-photo .button-secondary { background: var(--brand-lime); color: #233718; border: 1px solid var(--brand-lime); box-shadow: none; }
+.page-hero-photo .button-secondary:hover { background: #b4e485; }
+.page-hero-photo :focus-visible { outline-color: #fff; }
+@media (max-width: 640px) {
+  .page-hero-photo.section-shell { min-height: 480px; padding-block: 65px; }
+  .page-hero-photo::before { background: rgba(8,26,16,.76); }
+  .page-hero-photo > .page-hero-background { object-position: 60% center; }
+}
+
 /* Supplied partner artwork: preserve original colors, aspect ratios and files. */
 .partner-directory { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 18px; }
 .partner-logo { margin: 0; min-width: 0; min-height: 132px; padding: 20px 14px 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; border: 1px solid rgba(56,87,35,.1); border-radius: 18px; background: #fff; box-shadow: var(--raised-small,0 10px 28px rgba(56,87,35,.07)); }
