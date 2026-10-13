@@ -26,6 +26,16 @@ Realiza los cambios dentro de esta carpeta. Las otras carpetas de propuestas y l
 
 Para compartir o publicar el proyecto, entrega el contenido completo de esta carpeta manteniendo su estructura; `index.html` debe quedar en la raíz. El ZIP entregado es una copia de esta separación y tampoco se actualiza automáticamente.
 
+## Publicar en GitHub Pages
+
+El paquete `Tulah-Neumorfismo-GitHub-Pages.zip` contiene el sitio actualizado con ilustraciones en los cinco heroes interiores. Al extraerlo, `index.html` queda directamente en la raíz, junto con las otras cinco páginas y las carpetas `assets`, `css` y `js`.
+
+1. Extrae el ZIP y sube todo su contenido a la carpeta que publica GitHub Pages en el repositorio `Tulah` (la raíz o `docs`, según la configuración del repositorio).
+2. Reemplaza también los cinco HTML interiores y conserva `assets/heroes/` con sus cinco archivos SVG. Actualizar solamente `css/` deja los números anteriores en las páginas.
+3. Espera a que termine el despliegue de Pages y recarga la página con `Ctrl + F5`.
+
+El ZIP es una copia de entrega: debe regenerarse después de nuevos cambios. Las propuestas antiguas contienen otras versiones del sitio.
+
 ## Verificar el catálogo
 
 Con Node.js y Microsoft Edge instalados, ejecuta desde esta carpeta:
